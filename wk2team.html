@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+    function writeDiv(){
+        var userInput = document.getElementById("textOne").value;
+        var userInputOne = document.getElementById("textTwo").value;
+        calculate(userInput);
+
+        
+    }
+    function calculate(userInput){
+        
+        var i;
+        var a = parseInt(userInput);
+        var sum = 0;
+        for (i = 0; i <= a; i++) {
+            sum += i;
+        }
+
+        document.getElementById("info").innerHTML = sum;
+    }
+    function addition(){
+        var userInputOne = document.getElementById("textOne").value;
+        var userInputTwo = document.getElementById("textTwo").value;
+
+        var a = parseInt(userInputOne);
+        var b = parseInt(userInputTwo);
+        // var x = multiply(a,b){return a * b;}
+        var c = a + b;
+        document.getElementById("add").innerHTML = c;
+    }
+
+    
+
+    </script>
+    <title>Document</title>
+</head>
+<input type="text" name="" id="textOne"></input><br>
+
+<input type="text" name="" id="textTwo"></input><br>
+<button onclick="writeDiv()">Math</button>
+<button onclick="addition()">+</button>
+
+<div id="info"></div>
+<div id="add"></div>
+
+
+</body>
+</html>
