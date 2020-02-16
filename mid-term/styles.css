@@ -1,0 +1,54 @@
+ul {
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: red;
+    font-size: 20px;
+}
+
+ul li:hover {
+    background: blue;
+}
+
+ul li.checked {
+    background: #888;
+    color: #fff;
+}
+
+.header {
+    background-color: yellow;
+    padding: 40px 50px;
+    color: white;
+    text-align: center;
+}
+
+input {
+    margin: 0;
+    border-radius: 0;
+    width: 80%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+
+.addButton {
+    padding: 5px;
+    float: left;
+    background: green;
+    color: blue;
+    text-align: center;
+    border-radius: 0;
+    font-size: 18px;
+}
+
+.addButton:hover {
+    background-color: yellow;
+}
