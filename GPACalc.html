@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calc</title>
+    <script type="text/javascript"
+    "use strict";
+
+    function gpa() 
+    {
+        let className = [];
+        for (let i= 0; i < 7; i++) {
+            let id = "class" + i;
+            className.push(document.getElementById(id).value);
+        }
+
+        let credit = [];
+        for (let i = 0; i < 6; i++) {
+            let id = "credit" + i;
+            credit.push(parseFloat(document.getElementById(id).value));
+        }
+
+        let letter = [];
+        for (let i = 0; i < 6; i++) {
+            let id = "letter" + i;
+
+            letter.push(document.getElementById(id).value.toLowerCase());
+        }
+
+        let p = 0;
+
+        let sp = 0;
+
+        for (let i = 0; i < credit.length; i++) {
+
+            if (letter[i] == "A") {
+                p = credit[i] * 4.00;
+            }
+            else if (letter[i] == "A-") {
+                p = credit[i] * 3.67;
+            }
+            else if (letter[i] == "B+") {
+                p = credit[i] * 3.33;
+            }
+            else if (letter[i] == "B") {
+                p = credit[i] * 3.00;
+            }
+            else if (letter[i] == "B-") {
+                p = credit[i] * 2.67;
+            }
+            else if (letter[i] == "C+") {
+                p = credit[i] * 2.33;
+            }
+            else if (letter[i] == "C") {
+                p = credit[i] * 2.00;
+            }
+            else if (letter[i] == "D") {
+                p = credit[i] * 1.00;
+            }
+            else if (letter[i] == "F") {
+                p = credit[i] * 0.00;
+            }
+            else {
+                p = 0;
+            }
+            sp += p;
+        }
+        let total = 0;
+        for (let i = 0; i < credit.length; i++) {
+            if (isNaN(credit[i]) == false) {
+                total += credit[i];
+            }
+        }
+        let avg = (sp / total).toFixed(2);
+        let msg;
+
+        if (avg > 2.9) {
+            msg = "Good Job!";
+        }
+        else {
+            msg = "Your GPA is low!"
+        }
+        document.getElementById("output").innerHTML = average;
+        document.getElementById("message").innerHTML = message;
+            
+</script>
+
+</head>
+<body>
+    Class: <input type="text" id="class1"> Credit: <input type="text" id="credit1" size="3"> Grade: <input type="text" id="letter1" size="3"><br>
+    Class: <input type="text" id="class2"> Credit: <input type="text" id="credit2" size="3"> Grade: <input type="text" id="letter2" size="3"><br>
+    Class: <input type="text" id="class3"> Credit: <input type="text" id="credit3" size="3"> Grade: <input type="text" id="letter3" size="3"><br>
+    Class: <input type="text" id="class4"> Credit: <input type="text" id="credit4" size="3"> Grade: <input type="text" id="letter4" size="3"><br>
+    Class: <input type="text" id="class5"> Credit: <input type="text" id="credit5" size="3"> Grade: <input type="text" id="letter5" size="3"><br>
+    Class: <input type="text" id="class6"> Credit: <input type="text" id="credit6" size="3"> Grade: <input type="text" id="letter6" size="3"><br>
+    Class: <input type="text" id="class7"> Credit: <input type="text" id="credit7" size="3"> Grade: <input type="text" id="letter7" size="3"><br>
+
+    <button type = "button" onclick="gpa()">Calculate Your GPA</button>
+    <div id="output"></div>
+    <div id="message"></div>
+</body>
+</html>
